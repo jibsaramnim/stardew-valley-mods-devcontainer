@@ -1,0 +1,10 @@
+{
+    "Name": "SampleMod",
+    "Author": "jibsaramnim",
+    "Version": "1.0.0",
+    "MinimumApiVersion": "3.0.0",
+    "Description": "A sample mod project to get you started. Enjoy! :-)",
+    "UniqueID": "jibsaramnim.sdv.mods.SampleMod",
+    "EntryDll": "SampleMod.dll",
+    "UpdateKeys": []
+}
