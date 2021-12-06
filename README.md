@@ -4,6 +4,16 @@ A VSCode devcontainer configuration optimized for Stardew Valley mod development
 
 The devcontainer has been configured and should fully support Fedora and any other environment that uses selinux.
 
+# Quick Start
+
+The TL;DR of below:
+
+- Make sure you have SMAPI for developers installed
+- Create a symlink to your Stardew Valley installation directory called `_gamedirref` in the root of your project (`ln -s /path/to/stardew-valley ./_gamedirref`)
+- Build and re-open project in dev container
+- Build your mod project using the included build script (`ctrl+shift+b` or `cmd+shift+b`)
+- Happy coding! :-)
+
 # Prerequisites
 
 If you are starting with creating a new mod, you can use the "Use this template" option to create a repository under your own account with the prerequisite files in place. From there you can simply set up your Stardew Valley mod project as you usually would.
