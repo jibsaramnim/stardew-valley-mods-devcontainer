@@ -1,0 +1,51 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.205.2/containers/dotnet
+{
+    "name": "Stardew Valley Mod Devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            // Update 'VARIANT' to pick a .NET Core version: 3.1, 5.0, 6.0
+            // Append -bullseye or -focal to pin to an OS version.
+            "VARIANT": "5.0",
+            // Options
+            "NODE_VERSION": "lts/*"
+        }
+    },
+
+    "remoteEnv": {
+        "LOCAL_WORKSPACE_FOLDER": "/workspaces/${localWorkspaceFolderBasename}"
+    },
+
+    // For SELinux enabled systems (ie. Fedora) we need to mount the volume with the :Z option
+    // See https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
+    "workspaceMount": "",
+    "runArgs": [
+        "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z",
+        "--volume=${localWorkspaceFolder}/_gamedirref:/workspaces/stardew-valley-game:z"
+    ],
+
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "omnisharp.useGlobalMono": "always"
+    },
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "ms-dotnettools.csharp",
+        "jchannon.csharpextensions",
+        "ms-vscode.mono-debug"
+    ],
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [5000, 5001],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "dotnet restore src",
+
+    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "vscode",
+    "features": {
+        "git": "latest"
+    }
+}
