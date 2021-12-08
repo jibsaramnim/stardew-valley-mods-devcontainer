@@ -18,6 +18,8 @@ The TL;DR of below:
 
 You'll need to have [Docker](https://www.docker.com/) or [Podman](https://podman.io/) installed and set up on your system, and have [Visual Studio Code](https://code.visualstudio.com/) with the [Remote Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed.
 
+In case you're not yet familiar with VSCode's remote container extension, in a nutshell it allows you to develop within a Docker container environment, keeping the project's tool and environment requirements separate from your main machine's environment, and thus free of potential conflicts, version difference challenges, or per-distro tool availability restrictions. Please check out the [official documentation here](https://code.visualstudio.com/docs/remote/containers), it does a good job of explaining it in more technical detail.
+
 # Getting Started
 
 If you are starting with creating a new mod, you can use the "Use this template" option to create a repository under your own account with the prerequisite files in place. From there you can simply set up your Stardew Valley mod project as you usually would.
