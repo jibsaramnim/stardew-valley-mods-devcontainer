@@ -16,13 +16,17 @@ The TL;DR of below:
 
 # Prerequisites
 
+You'll need to have [Docker](https://www.docker.com/) or [Podman](https://podman.io/) installed and set up on your system, and have [Visual Studio Code](https://code.visualstudio.com/) with the [Remote Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed.
+
+# Getting Started
+
 If you are starting with creating a new mod, you can use the "Use this template" option to create a repository under your own account with the prerequisite files in place. From there you can simply set up your Stardew Valley mod project as you usually would.
 
 If you already have an existing mod and would like to start using VSCode, you can download clone or download an archive of this repository (Code > Download ZIP) and manually copy the necessary files into your existing repository. At minimum you'll want to copy the `.devcontainer` directory and copy or merge the included `.gitignore` file with your own. The included `.vscode` directory also includes a convenient build task which is configured to be the default build task.
 
 Depending on your preferences you might also want to bring over the `.editorconfig` file, which comes with some sane defaults set, which is used by the [EditorConfig extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) that is automatically installed within the devcontainer.
 
-# Getting Started
+# Before your first open
 
 Before you can successfully launch the devcontainer, you must first create a symlink to where you have your copy of Stardew Valley with the [developer version of SMAPI](https://smapi.io/) installed. The devcontainer configuration file expects this symlink to be called `_gamedirref` within the project directory.
 
