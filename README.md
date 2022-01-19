@@ -46,9 +46,17 @@ With this in place, you can now re-open your project using the devcontainer.
 
 Within the container you should have access to the necessary tools, including `msbuild`, `dotnet`, and `nuget`.
 
-Building your project can be done by triggering the included build task (`ctrl+shift+b`, or `cmd+shift+b`) or by running `msbuild` in terminal. Note that this task assumes your mod resides within a subdirectory called `src`.
+Building your project can be done by triggering the included build task (`ctrl+shift+b`, or `cmd+shift+b`) or by running `msbuild` in terminal. Note that the task assumes your mod resides within a subdirectory called `src`. If that's not the case for your project, you can modify the script in `.vscode/tasks.json`.
 
 The container is set up to automatically run `dotnet restore src` after building the container image, but you can re-run this whenever you need to of course. If you instead wish to use the `nuget restore` option, you'll have to either include a `*.sln` solution file in your project, or have a `packages.config` file.
+
+## Included tools
+
+Some of the included tools that are possibly useful for you to use directly are:
+
+- `msbuild`
+- `dotnet`
+- `nuget`
 
 # Contributing
 
