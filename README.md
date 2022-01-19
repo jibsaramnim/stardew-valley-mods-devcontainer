@@ -1,6 +1,6 @@
 # Stardew Valley Mod Development compatible devcontainer
 
-A VSCode devcontainer configuration optimized for Stardew Valley mod development. 
+A VSCode devcontainer configuration optimized for Stardew Valley mod development.
 
 The devcontainer has been configured and should fully support Fedora and any other environment that uses selinux.
 
@@ -8,11 +8,11 @@ The devcontainer has been configured and should fully support Fedora and any oth
 
 The TL;DR of below:
 
-- Make sure you have SMAPI for developers installed
-- Create a symlink to your Stardew Valley installation directory called `_gamedirref` in the root of your project (`ln -s /path/to/stardew-valley ./_gamedirref`)
-- Build and re-open project in dev container
-- Build your mod project using the included build script (`ctrl+shift+b` or `cmd+shift+b`)
-- Happy coding! :-)
+-   Make sure you have SMAPI for developers installed
+-   Create a symlink to your Stardew Valley installation directory called `_gamedirref` in the root of your project (`ln -s /path/to/stardew-valley ./_gamedirref`)
+-   Build and re-open project in dev container
+-   Build your mod project using the included build script (`ctrl+shift+b` or `cmd+shift+b`)
+-   Happy coding! :-)
 
 # Prerequisites
 
@@ -46,18 +46,22 @@ With this in place, you can now re-open your project using the devcontainer.
 
 Within the container you should have access to the necessary tools, including `msbuild`, `dotnet`, and `nuget`.
 
-Building your project can be done by triggering the included build task (`ctrl+shift+b`, or `cmd+shift+b`) or by running `msbuild` in terminal. Note that the task assumes your mod resides within a subdirectory called `src`. If that's not the case for your project, you can modify the script in `.vscode/tasks.json`.
+Building your project can be done by triggering the included build task (`ctrl+shift+b`, or `cmd+shift+b`) or by running `msbuild` in terminal. Note that the task assumes your mod resides within a subdirectory called `src`. If that's not the case for your project, you can modify the build scripts in `.vscode/tasks.json` to point to the right directory.
 
 The container is set up to automatically run `dotnet restore src` after building the container image, but you can re-run this whenever you need to of course. If you instead wish to use the `nuget restore` option, you'll have to either include a `*.sln` solution file in your project, or have a `packages.config` file.
+
+# Building your mod
+
+VSCode tasks are included to make building your mods easier. By default a debug build will be made when using VSCode's build task (default keyboard shortcut is `ctrl+shift+b` for Linux/Windows, or `cmd+shift+b` for Mac). You can access individual tasks through VSCode's Command Palette (`ctrl+shift+p` or `cmd+shift+p` by default) to trigger a release build.
 
 ## Included tools
 
 Some of the included tools that are possibly useful for you to use directly are:
 
-- `msbuild`
-- `dotnet`
-- `nuget`
+-   `msbuild`
+-   `dotnet`
+-   `nuget`
 
 # Contributing
 
-If you have any improvements or suggestions you wish to share, please feel free to open an issue or pull request. Test reports for different environments will also be appreciated. 
+If you have any improvements or suggestions you wish to share, please feel free to open an issue or pull request. Test reports for different environments will also be appreciated.

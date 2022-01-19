@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build: Debug",
             "type": "shell",
             "command": "msbuild",
             "args": [
@@ -13,13 +13,38 @@
                 "/t:build",
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel
                 "/consoleloggerparameters:NoSummary",
-
-                "src/",
+                // Build specific configuration
+                "/p:Configuration=Debug",
+                // Your mod's source directory
+                "src/"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build: Release",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                // Ask msbuild to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                "/t:build",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary",
+                // Build specific configuration
+                "/p:Configuration=Release",
+                // Your mod's source directory
+                "src/"
+            ],
+            "group": "build",
             "presentation": {
                 // Reveal the output only if unrecognized errors occur.
                 "reveal": "silent"
