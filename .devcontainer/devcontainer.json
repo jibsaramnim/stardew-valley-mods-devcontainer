@@ -14,7 +14,8 @@
     },
 
     "remoteEnv": {
-        "LOCAL_WORKSPACE_FOLDER": "/workspaces/${localWorkspaceFolderBasename}"
+        "LOCAL_WORKSPACE_FOLDER": "/workspaces/${localWorkspaceFolderBasename}",
+        "DOTNET_CLI_TELEMETRY_OPTOUT": "1"
     },
 
     // For SELinux enabled systems (ie. Fedora) we need to mount the volume with the :Z option
@@ -22,7 +23,7 @@
     "workspaceMount": "",
     "runArgs": [
         "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z",
-        "--volume=${localWorkspaceFolder}/_gamedirref:/workspaces/stardew-valley-game:z"
+        "--volume=${localWorkspaceFolder}/_gamedirref:/workspaces/stardew-valley-game:z",
     ],
 
     // Set *default* container specific settings.json values on container create.
