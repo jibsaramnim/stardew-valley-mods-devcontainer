@@ -8,11 +8,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/dotnet:0-${VARIANT}
 ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-# Add the mono-project repository, and install mono-complete and msbuild
+# Add the mono-project repository and install mono-complete and msbuild
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends gnupg ca-certificates \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
-    && echo "deb https://download.mono-project.com/repo/ubuntu beta-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-beta.list \
+    && echo "deb https://download.mono-project.com/repo/ubuntu preview-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list \
     && apt-get update \
     && apt-get install --no-install-recommends -y mono-complete msbuild nuget
 
