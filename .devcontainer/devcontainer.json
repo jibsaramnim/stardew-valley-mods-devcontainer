@@ -28,7 +28,10 @@
 
     // Set *default* container specific settings.json values on container create.
     "settings": {
-        "omnisharp.useGlobalMono": "always"
+        "omnisharp.useGlobalMono": "always",
+        "csharp.format.enable": true,
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true
     },
 
     // Add the IDs of extensions you want installed when the container is created.
